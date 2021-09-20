@@ -1,1 +1,0 @@
-# insomnia2-configs
