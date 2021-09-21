@@ -23,6 +23,13 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      routes:
+      - id: authorization-service
+        uri: lb://authorization-service
+        predicates:
+        - Path=/authorization/**
+        filters:
+        - RewritePath=/authorization/(?<path>.*), /$\{path}
   rabbitmq:
     host: localhost
     port: 5672
@@ -53,4 +60,8 @@ management:
     prometheus:
       enabled: true
     
-myProperty: nuno
+api-docs.endpoints:
+  authorization-service:
+    gateway-prefix: /api
+    service-url: lb://authorization-service
+    service-path: /resource/api-docs
