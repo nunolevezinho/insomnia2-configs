@@ -16,4 +16,20 @@ spring:
   main:
     web-application-type: reactive
     
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    metrics:
+      enabled: false
+    prometheus:
+      enabled: true
+    
 myProperty: nuno
