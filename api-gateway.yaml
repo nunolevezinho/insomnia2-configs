@@ -1,6 +1,6 @@
 # Http Server
 server:
-  port: 8026
+  port: 8025
   compression:
     enabled: true
   servlet:
