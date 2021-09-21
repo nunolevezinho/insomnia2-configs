@@ -24,7 +24,7 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-      - id: authorization-service
+      - id: authorization
         uri: lb://authorization-service
         predicates:
         - Path=/authorization/**
@@ -59,9 +59,3 @@ management:
       enabled: false
     prometheus:
       enabled: true
-    
-api-docs.endpoints:
-  authorization-service:
-    gateway-prefix: /api
-    service-url: lb://authorization-service
-    service-path: /resource/api-docs
