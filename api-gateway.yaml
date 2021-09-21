@@ -1,0 +1,19 @@
+spring.application.name: api-gateway
+
+server:
+  port: 8025
+  compression:
+    enabled: true
+  servlet:
+    encoding:
+       charset: UTF-8
+       enabled: true
+
+spring:
+  profiles:
+    active: default
+  mandatory-file-encoding: UTF-8
+  main:
+    web-application-type: reactive
+    
+myProperty: nuno
