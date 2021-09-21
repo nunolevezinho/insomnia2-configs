@@ -15,6 +15,12 @@ spring:
   mandatory-file-encoding: UTF-8
   main:
     web-application-type: reactive
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
     
 # Actuator
 management:
