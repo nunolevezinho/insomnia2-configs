@@ -1,5 +1,4 @@
-spring.application.name: api-gateway
-
+# Http Server
 server:
   port: 8025
   compression:
@@ -9,7 +8,10 @@ server:
        charset: UTF-8
        enabled: true
 
+# Spring Settings
 spring:
+  application:
+    name: api-gateway
   profiles:
     active: default
   mandatory-file-encoding: UTF-8
@@ -21,7 +23,14 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-    
+
+# Service Discovery
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:eureka@localhost:8761/eureka
+    register-with-eureka: false
+
 # Actuator
 management:
   endpoints:
